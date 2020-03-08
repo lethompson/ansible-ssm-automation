@@ -237,4 +237,8 @@ iv. Deploying the AWS infrastructure via Terraform
  
  ![ManagedInstance4](https://github.com/lethompson/ansible-ssm-automation/blob/master/SSM-Project10.PNG)
  
+ ## 4. Testing the solution
+ ### Copy the AWS EC2 public ip and paste in any web browser
+ ![ManagedInstance5](https://github.com/lethompson/ansible-ssm-automation/blob/master/SSM-Project16.PNG)
+ 
  
