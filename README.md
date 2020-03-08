@@ -125,6 +125,33 @@ resource "aws_security_group" "instance" {
 }
 ```
 
+iv. Deploying the AWS infrastructure via Terraform
+ ### Steps to run the terraform code to deploy the AWS Infrastructure
+ 
+ ```
+ > terraform init
+ ```
+ 
+ ```
+ > terraform validate
+ ```
+ 
+ ```
+ > terraform plan -out=tfplan
+ ```
+ 
+ ```
+ > terraform apply tfplan
+ ```
 ### Running Linux EC2 instance
 
 ![Running-EC2-Instance](https://github.com/lethompson/ansible-ssm-automation/blob/master/SSM-Project1.PNG)
+
+
+ ### To destroy the AWS infrastructure deployed from the terraform code
+  
+ ```
+ > terraform destroy
+ ```
+ 
+ 
