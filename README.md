@@ -199,8 +199,42 @@ iv. Deploying the AWS infrastructure via Terraform
  
  ![ManagedInstance2](https://github.com/lethompson/ansible-ssm-automation/blob/master/SSM-Project7.PNG)
  
- * For ``` Targets ``` Choose Manually Specified instance
+ ### Manually insert the ansible playbook (linux_playbook_httpd.yml) to install apache on the Linux server using System Manager 
+ 
+ ```
+ ---
+# This playbook will install Apache Web Server with php and mysql support
+- name: linux_deploy_httpd
+  hosts: all
+  tasks:
+  - name: Install HTTPD
+    yum:
+      name: "{{ item }}"
+      state: latest
+    loop:
+     - httpd
+    when: ansible_os_family == "RedHat"
+
+  - name: Setting default HTTP Server page
+    shell: echo "<h1>welcome to Ensono Ansible Playbook Demo</h1>" >> /var/www/html/index.html
+
+  - name: Start Apache Webserver
+    service:
+      name: httpd
+      state: restarted
+
+  - name: enable apache on startup and start service for redhat or centos
+    service: name=httpd enabled=yes state=started
+    when: ansible_os_family == "RedHat"
+ ```
+ ![ManagedInstance2b](https://github.com/lethompson/ansible-ssm-automation/blob/master/SSM-Project8.PNG)
+ 
+ * For ``` Targets ``` Choose Manually selecting instance
  * In the Parameters Section, paste the playbook YAML directly.
  * Define the max errors as ``` 1 ```. This means that if the execution encounters 1 ``` error ``` it will stop on the remaining targets.
+ 
+ ![ManagedInstance3](https://github.com/lethompson/ansible-ssm-automation/blob/master/SSM-Project9.PNG)
+ 
+ ![ManagedInstance4](https://github.com/lethompson/ansible-ssm-automation/blob/master/SSM-Project10.PNG)
  
  
