@@ -125,3 +125,6 @@ resource "aws_security_group" "instance" {
 }
 ```
 
+### Running Linux EC2 instance
+
+![Running-EC2-Instance](https://github.com/lethompson/ansible-ssm-automation/blob/master/SSM-Project1.PNG)
