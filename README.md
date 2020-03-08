@@ -187,4 +187,16 @@ iv. Deploying the AWS infrastructure via Terraform
  > terraform destroy
  ```
  
+ ## 3. Create SSM State Manager
+ 
+ * Choose ```Managed Instances ``` from the ``` System Manger Services ```
+ 
+ ![ManagedInstance](https://github.com/lethompson/ansible-ssm-automation/blob/master/SSM-Project5.PNG)
+ 
+ * Choose ``` State Manager ``` from the ``` System Manager Services ```
+ * Click on ``` Create Association ```
+ * Select the ``` AWS-RunAnsiblePlaybook ```
+ 
+ ![ManagedInstance2](https://github.com/lethompson/ansible-ssm-automation/blob/master/SSM-Project7.PNG)
+ 
  
