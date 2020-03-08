@@ -199,4 +199,8 @@ iv. Deploying the AWS infrastructure via Terraform
  
  ![ManagedInstance2](https://github.com/lethompson/ansible-ssm-automation/blob/master/SSM-Project7.PNG)
  
+ * For ``` Targets ``` Choose Manually Specified instance
+ * In the Parameters Section, paste the playbook YAML directly.
+ * Define the max errors as ``` 1 ```. This means that if the execution encounters 1 ``` error ``` it will stop on the remaining targets.
+ 
  
